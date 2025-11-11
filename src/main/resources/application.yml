@@ -1,1 +1,21 @@
-spring.application.name=SpringSecurity
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: freq
+    password: freqAminPgData
+    url: jdbc:postgresql://localhost:5433/freqDb
+  security:
+    user:
+      name: Amin
+      password: amin
+      roles: admin
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: none

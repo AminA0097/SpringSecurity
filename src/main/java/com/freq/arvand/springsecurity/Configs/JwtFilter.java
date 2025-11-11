@@ -1,2 +1,22 @@
-package com.freq.arvand.springsecurity.Configs;public class JwtFilter {
+package com.freq.arvand.springsecurity.Configs;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.antlr.v4.runtime.misc.NotNull;
+import org.springframework.stereotype.Service;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+
+@Service
+public class JwtFilter extends OncePerRequestFilter {
+    @Override
+    protected void doFilterInternal(
+            @NotNull  HttpServletRequest request,
+            @NotNull  HttpServletResponse response,
+            @NotNull  FilterChain filterChain) throws ServletException, IOException {
+        filterChain.doFilter(request, response);
+    }
 }

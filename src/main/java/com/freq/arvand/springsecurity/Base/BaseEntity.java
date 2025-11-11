@@ -1,2 +1,10 @@
-package com.freq.arvand.springsecurity.Base;public class BaseEntity {
+package com.freq.arvand.springsecurity.Base;
+
+import jakarta.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public class BaseEntity {
+    private boolean deleted;
+
+
 }
